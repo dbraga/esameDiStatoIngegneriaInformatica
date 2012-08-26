@@ -1,0 +1,25 @@
+Il file che e' stato trasferito contiene le pagine GIF 
+e gli analoghi file in formato PDF dei temi d'esame 
+dei concorsi per l'esame di stato di 
+Ingegneria e di Architettura
+
+La struttura delle directory e' molto semplice :
+
+Ad esempio :
+
+ingstr/1996-1/tema1/pag1.gif 
+
+Si riferisce alla prima pagina del  tema 1 della prima sessione 
+del 1996 per l'esame di stato dell'indirizzo di ingegneria strutturale
+
+Invece
+
+ingchi/1998-1/tema1.pdf
+
+Si riferisce all'intero tema in formato PDF della prima sessione del 1996
+per l'esame di stato dell'indirizzo di ingegneria chimica
+
+Maggiori spiegazioni si potranno trovare all'indirizzo 
+
+      http://www.biblio.polito.it/cgi-bin/temi_desame.pl
+

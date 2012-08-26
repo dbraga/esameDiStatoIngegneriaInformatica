@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0051)http://it.tldp.org/HOWTO/Linux+IPv6-HOWTO/x403.html -->
+<HTML><HEAD><TITLE>Che aspetto hanno gli indirizzi IPv6?</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2800.1400" name=GENERATOR><LINK 
+title="Linux IPv6 HOWTO (it)&#10; " href="index.html" rel=HOME><LINK 
+title="Fondamenti&#10; " href="chapter-basics.html" rel=UP><LINK 
+title="Storia di IPv6 su Linux&#10;  " href="basic-history-ipv6-linux.html" 
+rel=PREVIOUS><LINK title="FAQ (Fondamentali)&#10;  " href="x428.html" 
+rel=NEXT></HEAD>
+<BODY class=SECT1 text=#000000 vLink=#840084 aLink=#0000ff link=#0000ff 
+bgColor=#ffffff>
+<DIV class=NAVHEADER>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" 
+summary="Header navigation table" border=0>
+  <TBODY>
+  <TR>
+    <TH align=middle colSpan=3>Linux IPv6 HOWTO (it)</TH></TR>
+  <TR>
+    <TD vAlign=bottom align=left width="10%"><A accessKey=P 
+      href="http://it.tldp.org/HOWTO/Linux+IPv6-HOWTO/basic-history-ipv6-linux.html">Indietro</A></TD>
+    <TD vAlign=bottom align=middle width="80%">Capitolo 2. Fondamenti</TD>
+    <TD vAlign=bottom align=right width="10%"><A accessKey=N 
+      href="http://it.tldp.org/HOWTO/Linux+IPv6-HOWTO/x428.html">Avanti</A></TD></TR></TBODY></TABLE>
+<HR align=left width="100%">
+</DIV>
+<DIV class=SECT1>
+<H1 class=SECT1><A name=AEN403>2.3. Che aspetto hanno gli indirizzi 
+IPv6?</A></H1>
+<P>Come precedentemente accennato, gli indirizzi IPv6 sono lunghi 128 bit. 
+Questa quantità di bit genera numeri decimali molto grandi che possono avere 
+fino a 39 cifre: </P>
+<TABLE width="100%" bgColor=#e0e0e0 border=0>
+  <TBODY>
+  <TR>
+    <TD><FONT color=#000000><PRE class=PROGRAMLISTING>2^128-1: 340282366920938463463374607431768211455
+  </PRE></FONT></TD></TR></TBODY></TABLE>
+<P>Tali numeri non sono indirizzi che possono effettivamente essere agevolmente 
+memorizzati. Lo schema dell'indirizzo IPv6 è un insieme di bit (esattamente come 
+IPv4, ma spesso di ciò non si è consapevoli). Pertanto una migliore notazione 
+per così grandi numeri è l'esadecimale. In esadecimale, 4 bit (anche conosciuto 
+come "nibble") sono rappresentati da un numero o un carattere da 0 a 9 e da A a 
+F (10-15). Questo formato riduce la lunghezza dell'indirizzo IPv6 a 32 
+caratteri. </P>
+<TABLE width="100%" bgColor=#e0e0e0 border=0>
+  <TBODY>
+  <TR>
+    <TD><FONT color=#000000><PRE class=PROGRAMLISTING>2^128-1: 0xffffffffffffffffffffffffffffffff
+  </PRE></FONT></TD></TR></TBODY></TABLE>
+<P>Questa rappresentazione non è ancora molto conveniente (possibile confusione 
+o perdita di singole cifre esadecimali), così i progettisti di IPv6 hanno scelto 
+un formato esadecimale con i due punti come separatori dopo ogni blocco di 16 
+bit. Inoltre, l'iniziale "0x" (l'indicatore usato nei linguaggi di 
+programmazione per valori esadecimali) viene rimosso: </P>
+<TABLE width="100%" bgColor=#e0e0e0 border=0>
+  <TBODY>
+  <TR>
+    <TD><FONT color=#000000><PRE class=PROGRAMLISTING>2^128-1: ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
+  </PRE></FONT></TD></TR></TBODY></TABLE>
+<P>Un esempio di indirizzo utilizzabile (si vedano i tipi di indirizzo più 
+avanti) è: </P>
+<TABLE width="100%" bgColor=#e0e0e0 border=0>
+  <TBODY>
+  <TR>
+    <TD><FONT color=#000000><PRE class=PROGRAMLISTING>3ffe:ffff:0100:f101:0210:a4ff:fee3:9566
+  </PRE></FONT></TD></TR></TBODY></TABLE>
+<P>Per semplificare, lo zero iniziale di ogni blocco di 16 bit può essere 
+omesso: </P>
+<TABLE width="100%" bgColor=#e0e0e0 border=0>
+  <TBODY>
+  <TR>
+    <TD><FONT color=#000000><PRE class=PROGRAMLISTING>3ffe:ffff:0100:f101:0210:a4ff:fee3:9566  -&gt; 
+¬ 3ffe:ffff:100:f101:210:a4ff:fee3:9566
+  </PRE></FONT></TD></TR></TBODY></TABLE>
+<P>Una sequenza di 16 blocchi di bit contenenti solo zeri può essere rimpiazzata 
+con "::". Ma non più di una alla volta, altrimenti non è più una 
+rappresentazione unica. </P>
+<TABLE width="100%" bgColor=#e0e0e0 border=0>
+  <TBODY>
+  <TR>
+    <TD><FONT color=#000000><PRE class=PROGRAMLISTING>3ffe:ffff:100:f101:0:0:0:1  -&gt;  3ffe:ffff:100:f101::1
+  </PRE></FONT></TD></TR></TBODY></TABLE>
+<P>La riduzione più grande si può apprezzare con l'indirizzo IPv6 relativo a 
+localhost: </P>
+<TABLE width="100%" bgColor=#e0e0e0 border=0>
+  <TBODY>
+  <TR>
+    <TD><FONT color=#000000><PRE class=PROGRAMLISTING>0000:0000:0000:0000:0000:0000:0000:0001  -&gt;  ::1
+  </PRE></FONT></TD></TR></TBODY></TABLE>
+<P>Esiste anche una rappresentazione (codificata in base 85) cosidetta 
+<EM>compatta</EM> definita <A href="http://www.faqs.org/rfcs/rfc1924.html" 
+target=_top>RFC 1924 / A Compact Representation of IPv6 Addresses</A> 
+(pubblicata il 1 Aprile 1996), mai vista da nessuna parte, probabilmente un 
+pesce d'Aprile, ma di seguito è riportato un esempio: </P>
+<TABLE width="100%" bgColor=#e0e0e0 border=0>
+  <TBODY>
+  <TR>
+    <TD><FONT color=#000000><PRE class=PROGRAMLISTING># ipv6calc --addr_to_base85 3ffe:ffff:0100:f101:0210:a4ff:fee3:9566 
+Itu&amp;-ZQ82s&gt;J%s99FJXT
+  </PRE></FONT></TD></TR></TBODY></TABLE><A name=AEN423></A>
+<BLOCKQUOTE class=BLOCKQUOTE>
+  <P>Info: <EM>ipv6calc</EM> è un programma per calcolare e convertire indirizzi 
+  IPv6 nei vari formati e può essere trovato qui: <A 
+  href="http://www.deepspace6.net/projects/ipv6calc.html" target=_top>ipv6calc 
+  homepage</A> (<A 
+  href="http://mirrors.bieringer.de/www.deepspace6.net/projects/ipv6calc.html" 
+  target=_top>Mirror</A>). </P></BLOCKQUOTE></DIV>
+<DIV class=NAVFOOTER>
+<HR align=left width="100%">
+
+<TABLE cellSpacing=0 cellPadding=0 width="100%" 
+summary="Footer navigation table" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=left width="33%"><A accessKey=P 
+      href="http://it.tldp.org/HOWTO/Linux+IPv6-HOWTO/basic-history-ipv6-linux.html">Indietro</A></TD>
+    <TD vAlign=top align=middle width="34%"><A accessKey=H 
+      href="http://it.tldp.org/HOWTO/Linux+IPv6-HOWTO/index.html">Partenza</A></TD>
+    <TD vAlign=top align=right width="33%"><A accessKey=N 
+      href="http://it.tldp.org/HOWTO/Linux+IPv6-HOWTO/x428.html">Avanti</A></TD></TR>
+  <TR>
+    <TD vAlign=top align=left width="33%">Storia di IPv6 su Linux</TD>
+    <TD vAlign=top align=middle width="34%"><A accessKey=U 
+      href="http://it.tldp.org/HOWTO/Linux+IPv6-HOWTO/chapter-basics.html">Risali</A></TD>
+    <TD vAlign=top align=right width="33%">FAQ 
+(Fondamentali)</TD></TR></TBODY></TABLE></DIV></BODY></HTML>

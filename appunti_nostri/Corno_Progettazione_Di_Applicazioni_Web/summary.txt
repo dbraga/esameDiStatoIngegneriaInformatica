@@ -1,0 +1,89 @@
+1) Web BASED TRANSACTIONS
+
+evoluzione del web:
+	da client-server semplice a n-tier
+	da client passivo a client attivo 
+
+transazioni
+-statiche (browser-server-file system)
+-dinamica (browser-server-appl-file system)
+-database driven (browser-server-appl-db)
+-rich client asynchronous (client appl - browser - server - appl - fs/bd)
+
+
+time transactions (browser-web server - app server - db server ) , 
+propagazione del token tra i vari agenti
+(più potere di calcolo a fronte di maggior tempo di elaborazione)
+
+
+2)JSP
+
+Pagine dinamiche 
+JSP (servlets, jsp pages -> html+tag java <% %>, jstl)
+concetto chiave: separare presentazione dalla logica
+concetto di oggeti impliciti (request, session, response, ecc...) 
+
+tutto la computazione è nel back end del server : .jsp -> .java -> .class -> http response (gestita ad servlet)
+java beans : applicazioni chiamate dall'interno delle pagine jsp. sono persistenti. 
+
+paradigma : MVC  Model View Controller 
+
+Model -> stato corrente dell' applicazione (Java beans), permette di estrarre il modello dati
+Controller -> fa azioni sul model (jsp/servlets), potendolo modificare
+View -> crea viste, cio che vede l'utente (html+jsp)
+
+
+3) JDBC 
+API per interffacciamento a database relazionali
+tipico worflow: 
+1. loading driver
+2. definire URL
+3. stabilire la connessione
+4. creare un oggetto statement
+5. eseguire la query
+6. processare i risultati
+7. chiudi connessione
+
+
+4) CSS
+permette di staccare la presentazione/layout dalla logica e dai dati
+concetti: 
+	- selettori definiscono dichiarazione (tipo-valore), classi come istanza dei selettori
+	- inheritance (top-down || bottom-up)
+	- box model
+	- floating (layout)
+	- identificatori
+
+5) JAVASCRIPT
+linguaggio client-side
+linguaggio ad oggetti non tipizzato
+liguaggio interpretato, non compilato
+interazione con DOM (intercettazione e creazione eventi, objects)
+eventi : tipo bubble (bottom-up)
+3 tipi di intercettazione:
+- intercettarlo subito
+- lasciare che si propaghi e intercettarlo alla base del documento
+- non intercettarlo
+
+6)AJAX
+mezzo per utilizzare al meglio strumenti già esistenti (javascript,http)
+
+rich internet applications
+more responsive, client server balance, asynchronous communication
+" With AJAX, your JavaScript can communicate directly with the server, 
+using the JavaScript XMLHttpRequest object."
+
+7) SERVLET
+estensioni del server
+classi create o istanziate run time per estendere funzionalità del server, 
+gestire threads ecc
+
+8)XHTML
+set più ampio dell' html
+dtd, namespace
+
+
+
+
+
+

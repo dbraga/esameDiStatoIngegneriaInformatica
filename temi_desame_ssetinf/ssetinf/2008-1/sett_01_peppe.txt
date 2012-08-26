@@ -1,0 +1,5 @@
+wireless -> sistemi senza fili
+
+contesto: LAN aziendale locale wifi, con utilizzo di dispositivi smartphone dipendenti
+
+descrizione di 802.11b/g grandi linee, possibilità di utilizzare il vecchio backbone aggiungendo sistemi di accounting utente, sharing connessione wifi, hot-spot, .... , utilizzo del protocollo TCP/IP

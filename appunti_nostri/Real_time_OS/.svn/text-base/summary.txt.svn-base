@@ -1,0 +1,8 @@
+metodi di sincronizzazione
+----------------------------
+
+semafori (processi)
+mutex (thread)
+monitor (semaforo unario)
+message passing (send, receive)
+

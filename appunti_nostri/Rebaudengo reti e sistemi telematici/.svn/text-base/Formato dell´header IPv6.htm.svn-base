@@ -1,0 +1,201 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0048)http://www.ngnet.it/i/ipv6proto/ipv6-proto-1.php -->
+<HTML><HEAD><TITLE>Formato dell´header IPv6</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META http-equiv=pragma content=no-cache><LINK 
+href="Formato dell´header IPv6_file/base.css" type=text/css rel=stylesheet>
+<META content="MSHTML 6.00.2800.1400" name=GENERATOR></HEAD>
+<BODY bgColor=#ffffff leftMargin=0 topMargin=0 MARGINWIDTH="0" MARGINHEIGHT="0">
+<TABLE cellSpacing=0 cellPadding=0 width=796 align=left border=0>
+  <TBODY>
+  <TR>
+    <TD>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" align=center border=0>
+        <TBODY>
+        <TR>
+          <TD vAlign=top align=left width=135 bgColor=#ffffff rowSpan=2><IMG 
+            src="Formato dell´header IPv6_file/ngnet.png"></TD>
+          <TD width=2 bgColor=#ffffff rowSpan=2><IMG 
+            src="Formato dell´header IPv6_file/empty-point.gif"></TD>
+          <TD class=titolobianco vAlign=center align=middle width=659 
+          bgColor=#ce0000 colSpan=3 height=18><!-- Inter-Server navigation bar - BEGIN -->Approfondimento 
+            tecnico <!-- Inter-Server navigation bar - END --></TD></TR>
+        <TR>
+          <TD class=highlight vAlign=center align=middle width=455 
+          bgColor=#ffffff height=34>&nbsp;Formato dell´header IPv6</TD>
+          <TD vAlign=bottom align=middle width=192 bgColor=#ffffff 
+            rowSpan=5><A href="http://www.telecomitalialab.com/"><IMG height=32 
+            alt="Telecom Italia Lab logo" 
+            src="Formato dell´header IPv6_file/logotelecomlab.jpg" width=192 
+            border=0></A></TD>
+          <TD width=12 bgColor=#ffffff height=34>&nbsp;</TD></TR>
+        <TR>
+          <TD bgColor=#6b6963 colSpan=3 height=2><IMG 
+            src="Formato dell´header IPv6_file/empty-point.gif"></TD>
+          <TD width=12 bgColor=#6b6963 height=2><IMG 
+            src="Formato dell´header IPv6_file/empty-point.gif"></TD></TR>
+        <TR>
+          <TD class=testopiccolobold vAlign=center align=left bgColor=#dfdfdf 
+          colSpan=3 height=16>&nbsp;&nbsp; <!-- Local navigation bar - BEGIN -->&nbsp; <A 
+            href="http://www.ngnet.it/e/ipv6proto/ipv6-proto-1.php"><SPAN 
+            class=testopiccolobold>English</SPAN></A> | <A 
+            href="http://www.ngnet.it/i/index.php"><SPAN 
+            class=testopiccolobold>ngnet.it home</SPAN></A> &gt;&gt; <A 
+            href="http://www.ngnet.it/i/cosa-ipv6.php"><SPAN 
+            class=testopiccolobold>Cos´è IPv6</SPAN></A> &gt;&gt; <A 
+            href="http://www.ngnet.it/i/ipv6proto/index.php"><SPAN 
+            class=testopiccolobold>Il protocollo IPv6</SPAN></A> &gt;&gt; <SPAN 
+            class=testopiccoloboldgray>Formato dell'header IPv6</SPAN> <!-- Local navigation bar - END --></TD>
+          <TD width=12 bgColor=#dfdfdf height=16>&nbsp;</TD></TR>
+        <TR>
+          <TD bgColor=#6b6963 height=2><IMG 
+            src="Formato dell´header IPv6_file/empty-point.gif"></TD>
+          <TD bgColor=#6b6963 colSpan=2 height=2><IMG 
+            src="Formato dell´header IPv6_file/empty-point.gif"></TD>
+          <TD width=12 bgColor=#6b6963 height=2><IMG 
+            src="Formato dell´header IPv6_file/empty-point.gif"></TD></TR>
+        <TR>
+          <TD width=137 bgColor=#ffffff colSpan=2 height=5><IMG 
+            src="Formato dell´header IPv6_file/empty-point.gif"></TD>
+          <TD width=455 bgColor=#ffffff height=3><IMG 
+            src="Formato dell´header IPv6_file/empty-point.gif"></TD>
+          <TD width=12 bgColor=#ffffff height=3><IMG 
+            src="Formato dell´header IPv6_file/empty-point.gif"></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" align=center border=0>
+        <TBODY>
+        <TR><!-- TEXT in the middle - BEGIN --></TR></TBODY></TABLE>
+      <TABLE cellPadding=10 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=testo><A 
+            href="http://www.ngnet.it/i/ipv6proto/ipv6-proto-2.php"><IMG 
+            alt=next src="Formato dell´header IPv6_file/arrow-r.gif" 
+            border=0></A> 
+            <HR SIZE=4>
+            <SPAN class=highlight>Formato dell'header IPv6</SPAN>
+            <P><SPAN class=testo>Il nuovo <I>header</I> di IPv6 [<A 
+            href="http://www.ngnet.it/rfc/rfc2460.txt">RFC2460</A>] è illustrato 
+            in figura 1, mentre in figura 2 è stato riportato quello IPv4 al 
+            fine di facilitare il confronto tra i due protocolli.
+            <P>
+            <CENTER><IMG 
+            src="Formato dell´header IPv6_file/ipv6-proto01.gif"><BR>Figura 1: 
+            <I>Header</I> IPv6 </CENTER>
+            <P>I campi dell'intestazione IPv6 hanno il seguente significato: 
+            <UL>
+              <LI><TT>version</TT> (4 bit): indica la versione del protocollo, 
+              quindi conterrà il numero 6; 
+              <LI><TT>DS byte</TT> (8 bit): questo campo è utilizzato dalla 
+              sorgente e dai router per identificare i pacchetti che 
+              appartengono a una stessa classe di traffico e quindi distinguere 
+              tra loro i pacchetti con diversa priorità. 
+              <LI><TT>flow label</TT> (20 bit): etichetta un flusso di dati; 
+              <LI><TT>payload length</TT> (16 bit): indica la lunghezza del 
+              campo dati del pacchetto; 
+              <LI><TT>next header</TT> (8 bit): identifica il tipo di header che 
+              segue immediatamente quello IPv6; 
+              <LI><TT>hop limit</TT> (8 bit): è decrementato di uno da ogni nodo 
+              che inoltra il pacchetto. Quando il suo valore è nullo il 
+              pacchetto viene scaricato; 
+              <LI><TT>source address</TT> (128 bit): indirizzo della sorgente; 
+              <LI><TT>destination address</TT> ( 128 bit) : indirizzo di 
+              destinazione. </LI></UL>
+            <CENTER><IMG 
+            src="Formato dell´header IPv6_file/ipv6-proto02.gif"><BR>Figura 2: 
+            <I>Header</I> IPv4 </CENTER>
+            <P>Rispetto IPv4, il formato dell'intestazione è più semplice e 
+            questo permette migliori prestazioni. 
+            <P>La scelta di eliminare il <TT>checksum </TT>deriva dal fatto che 
+            esso è già calcolato a livello 2 e, dato il tasso di errore delle 
+            reti attuali, tale controllo è sufficiente. Si ottengono così 
+            migliori prestazioni poiché i <I>router</I> non devono più 
+            ricalcolarlo per ogni pacchetto. Eliminando il <TT>checksum</TT> non 
+            si è però tutelati dagli errori che i <I>router</I> possono 
+            commettere nel processare i pacchetti. Tali errori comunque non 
+            risultano pericolosi per la rete in quanto causano solo la perdita 
+            del pacchetto stesso in seguito alla presenza di campi con valori 
+            non validi (es: indirizzi inesistenti).
+            <P>Il campo <TT>hop limit</TT> indica il numero massimo di nodi 
+            (<I>hop</I>) che un pacchetto può attraversare prima di giungere a 
+            destinazione. In IPv4 tale campo è espresso in secondi (TTL: 
+            <TT>Time To Live</TT>), anche se ha la stessa funzione. Il 
+            cambiamento è stato fatto per due motivi. Innanzi tutto per la 
+            semplicità di realizzazione: infatti, anche in IPv4 i <I>router</I> 
+            traducono i secondi in numero di <I>hop</I> per poi ritradurli in 
+            secondi. In secondo luogo ci si svincola dalle caratteristiche 
+            fisiche (quali la banda) della rete. Poiché il campo <TT>hop 
+            limit</TT> è di 8 bit, il numero massimo di nodi attraversabili da 
+            un pacchetto è 255.<BR>L'<TT>hop limit</TT> può servire anche ad un 
+            altro scopo: cercare tra un gruppo di <I>server</I> che svolgono la 
+            stessa funzione quello più vicino. Si consideri a tale scopo 
+            l'esempio riportato in figura 3. Il gruppo sarà identificato da un 
+            indirizzo <I>multicast</I>. L'<I>host</I> inizierà la ricerca 
+            inviando a questo indirizzo una richiesta con <TT>hop limit</TT> = 
+            1. Essa raggiunge due <I>router</I> prima di essere scartata. Dopo 
+            un intervallo di tempo prefissato, la stazione invia una seconda 
+            richiesta, questa volta con <TT>hop limit</TT> = 2. Anche questa non 
+            ottiene risposta. Dopo un altro <I>timeout</I>, l'<I>host</I> 
+            riprova con <TT>hop limit</TT> = 3. Stavolta la richiesta raggiunge 
+            uno dei <I>server</I>, il più vicino, che risponde; così l'host 
+            conclude la sua ricerca e i <I>server</I> più lontani non ne sono 
+            coinvolti. IPv6 permette di raggiungere lo stesso risultato anche in 
+            un altro modo, utilizzando gli indirizzi <I>anycast</I>.
+            <P>
+            <CENTER><IMG 
+            src="Formato dell´header IPv6_file/ipv6-proto03.gif"></CENTER><BR>
+            <CENTER>Figura 3 - Esempio di uso di <TT>hop 
+            limit</TT>.</CENTER><BR><HR SIZE=1>In IPv4 la lunghezza dell'intestazione è 
+            variabile, quindi bisogna specificare sia la lunghezza 
+            dell'<I>header</I> IPv4 (<TT>header length</TT>) che la misura 
+            totale del pacchetto (<TT>total</TT><I> </I><TT>length</TT>). In 
+            IPv6, invece, l'intestazione ha una dimensione fissa pari a 40 byte 
+            quindi è sufficiente indicare solo la lunghezza del campo dati. Il 
+            campo <TT>payload length</TT> è lungo 16 bit, quindi il pacchetto 
+            non può superare i 64 kb. Tale dimensione garantisce ancora buone 
+            prestazioni per i <I>router</I> (attesa in coda limitata, 
+            <I>overhead</I> dello 0.06% ), ma tale limite è troppo stringente 
+            quando a comunicare sono dei supercomputer. Essi sono dotati di 
+            memorie enormi e in genere sono collegati tra loro direttamente, 
+            quindi sarebbe comodo poter avere pacchetti molto maggiori di 64 kb. 
+            Per le loro esigenze è stata pensata l'opzione <I>jumbogram</I> in 
+            cui il campo <TT>payload length</TT> è posto a zero e il pacchetto 
+            può superare i limiti imposti. 
+            <P>Si è detto che l'intestazione dei pacchetti IPv6 ha dimensione 
+            fissa: questo perché si è scelto di eliminare le opzioni, che ora 
+            sono gestite mediante il meccanismo degli <I>extension</I> 
+            <I>header</I> illustrato nel <A 
+            href="http://www.ngnet.it/i/ipv6proto/ipv6-proto-2.php">prossimo 
+            paragrafo</A>. Mediante il suddetto meccanismo, viene gestita anche 
+            la frammentazione dei pacchetti e questa rappresenta una differenza 
+            fondamentale rispetto IPv4. In questo modo infatti, non solo si 
+            ottiene un'intestazione più semplice, ma essendo in IPv6 la 
+            frammentazione gestita agli estremi, i nodi intermedi possono 
+            elaborare i pacchetti più velocemente.<BR>Ciò che ha reso possibile 
+            fare in modo che la frammentazione avvenga agli estremi è la 
+            procedura di <I>MTU Discovery</I> che permette alla sorgente di 
+            determinare la MTU minima lungo il cammino di instradamento verso la 
+            destinazione. La <I>Maximum Transmission Unit</I> (MTU) indica qual 
+            è la dimensione massima che può avere un pacchetto; tale valore è 
+            peculiare di ogni tipo di link, ma in ogni caso il valore minimo per 
+            IPv6 è stato fissato a 1280 byte. Questo nuovo meccanismo per la 
+            gestione della frammentazione causa, nel caso peggiore in cui il 
+            link più piccolo è l'ultimo, lo spreco di tanti pacchetti quanti 
+            sono gli <I>hop</I>, ma<I> </I>è più conveniente che far gestire la 
+            frammentazione ai <I>router</I>.<BR>Un altro cambiamento rispetto 
+            IPv4 è l'introduzione del campo <TT>flow label,</TT> compiuta al 
+            fine di facilitare l'individuazione dei dati che richiedono 
+            trattamenti particolari, quali per esempio quelli delle applicazioni 
+            <I>real time</I>. <A name=_Toc486749866></A></P>
+            <P>
+            <HR SIZE=4>
+            <A href="http://www.ngnet.it/i/ipv6proto/ipv6-proto-2.php"><IMG 
+            alt=next src="Formato dell´header IPv6_file/arrow-r.gif" 
+            border=0></A> </SPAN></TD></TR></TBODY></TABLE><!-- TEXT in the middle - END --></TD></TR></TBODY></TABLE></TD></TR><TR><TD 
+COLSPAN="3" HEIGHT="2" BGCOLOR="#FFFFFF" VALIGN="middle"><IMG 
+src="Formato dell´header IPv6_file/empty-point.gif"></TD></TR> <TR><TD 
+COLSPAN="3" HEIGHT="2" BGCOLOR="#CE0000" VALIGN="middle"><IMG 
+src="Formato dell´header IPv6_file/empty-point.gif"></TD></TR> <TR><TD 
+COLSPAN="3" HEIGHT="2" BGCOLOR="#FFFFFF" VALIGN="middle"><IMG 
+src="Formato dell´header IPv6_file/empty-point.gif"></TD></TR> <TR><TD><!-- Inter-Server navigation bar - BEGIN --><!-- Inter-Server navigation bar - END --></TD></TR></TABLE></BODY></HTML>

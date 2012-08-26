@@ -1,0 +1,6 @@
+tecnologia wireless: 
+
+    .a sistema di RFID su linee di assemblaggio ( tracking di elementi all'interno della pipeline )
+    .b sw di gestione just in time
+    .c problematiche ( zone di conflitto segnali, enorme numero di pezzi e riutilizzo di ID vecchi)
+    .d risparmi sulla gestione del just in time, possibilità di diminuire aumentare la produzione, velocizzazione del pagamento ai fornitori

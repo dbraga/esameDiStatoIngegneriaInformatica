@@ -1,0 +1,34 @@
+Domotica
+
+1. 
+    .a tecniche
+        .1 l'affidabilità dei sistemi/dispositivi
+        .2 il rispetto delle norme di sicurezza (esempio ripetitore wifi con bassa potenza, etc.)
+        .3 implementazione di un sw di controllo che si autodefinisce
+        .4 gestione dei conflitti (sensore che mi dice di kiudere la finestra e un altro che apre la finestra come mi comporto?)
+        .5 sicurezza (es. se esiste accesso remoto, fw)
+        .6 gestione ed interazione umana (se il sw sta kiudendo la finestra e vi è presenza umana allora si deve accorgere che ... )
+        .7 flessibilità della configurazione (es. cambiamento di un muro/mobile cosa succede?)
+
+    .b scientifiche
+        .1 algoritmi per l'efficenza energetica (es. definire cos'è l'efficenza energetica...)
+        .2 ricerche scientifiche sulle conseguenze di un ambiente artificiale ed intelligente sul comportamento umano (es. studio psico-comportamentali studiare sistemi integrazione...)
+        .3 learning and self-adaption (es. apprendimento dal comportamento dell'utente e adattamento da "solo")
+      
+    .c progettuali
+        .1 possibilità di accedere a tutte le funzionalità della casa anche senza corrente 
+        .2 team di sviluppo trasversale
+        .3 misurazione
+
+2. progetto applicativo: informatico
+    a. sw di controllo
+        .1 input
+        .....
+    b. context diagram
+
+3. 
+    a. analisi di mercato per identificare le tipologie di applicazioni
+    b. fornitori -> prodotti ISO 9000
+    c. team: rs, programmatori, tester, gestionali, psicologi, ....
+    d. maggior costo sul sw, hw si trova a basso costo
+    e. durata 3 anni, ottenuta dal grafico di GANT o PERL

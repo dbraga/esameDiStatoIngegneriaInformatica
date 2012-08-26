@@ -1,0 +1,12 @@
+O.S. design
+-------------
+
+stati per un programma
+scheduling preemptive / non preemptive
+several optimitazion criteria
+
+
+memory
+
+unix file system organization
+(file descriptor, file table, i node)

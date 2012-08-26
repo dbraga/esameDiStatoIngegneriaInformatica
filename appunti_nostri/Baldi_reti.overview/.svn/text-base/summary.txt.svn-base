@@ -1,0 +1,103 @@
+
+
+livello iso osi:
+1. physic - 2.data link - 3.network - 4.transport - 5.session - 6.presentation - 7.application
+
+
+ethernet = 1-2 -> bridge, hub , switch
+ip = 3  -> router
+tcp/udp = 4 -> port forwarding routers, 
+app = 5-6-7 -> gateway
+
+
+ETHERNET
+------------	
+
+IEEE 802
+
+indirizzo : 6 byte
+pacchetto : paylod (max 1500) + 8 header physic +  12 header mac + 4 coda mac
+CSMA/CD:                                     
+   Carrier Sense                             
+   Multiple Access                           
+   with Collision Detection                  
+Protocollo MAC:                              
+   concepito per topologie a bus (oggi si usa anche a ring)
+   non deterministico con tempo di attesa non   limitato superiormente
+
+
+cavi coassiali
+
+IP
+------
+
+Datagram vs Connection Oriented
+
+I pacchetti viaggiano su percorsi indipendenti
+Out of order delivery
+Bandwidth Management difficoltoso
+   riservare e garantire banda
+   rifiutare connessioni (Call Acceptance Control)
+Meno complesso: non richiede negoziazione nè lato utente, nè all’interno della rete
+Robusto: si adatta a variazioni di traffico, topologia, guasti
+Adatto al traffico dati (bursty)
+frammentazione
+
+indirizzi : 32 bit
+x comunicare tra reti distinte (net part + host part)
+LIS = logical IP subdomain 
+consegna diretta ( uso ARP e gli indirizzi mac, tabelle MAC-IP)
+
+tabelle di instradamento (dinamiche , statiche, dirette)
+
+
+
+ARP - RARP (3+)
+-----------
+arp: a partire da ip, mac
+rarp : a partire da mac, ip ; simile a dhcp, solo che la tabella indirizzi IP è statica
+
+ICMP (3)
+-----
+scopi:
+scoprire anomalie
+verificare stato rete
+scoprire la netmask
+migliorare il routing
+
+
+DHCP
+----
+scopo: ottenere indirizzo IP
+utilizza udp (porta 67)
+
+MULTICAST
+----------
+per server multimediali, usa un sulo flusso poer mandare il contenuto,
+e manda all'indirizzo multicast, a n macchine. il flusso viene propagato 
+dalle stazioni di servizio . i destinatari finali possono fare il catch del contenuto,
+si usa UDP e non c'è comunicazione verso il server
+RCP
+
+
+TCP-UDP
+-------
+reliable, in-order unicast
+delivery (TCP)
+    congestion
+    flow control
+    connection setup
+unreliable (“best-effort”),
+unordered unicast or multicast
+delivery: UDP
+services not available:
+    real-time
+    bandwidth guarantees
+    reliable multicast
+
+
+
+
+
+
+

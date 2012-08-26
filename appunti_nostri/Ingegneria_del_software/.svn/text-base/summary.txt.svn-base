@@ -1,0 +1,23 @@
+Workflow 
+
+1) requirement eng.
+2) design
+3) unit implementation
+4) system integration
+
+
+
+1) Req
+
+Testo
+Requirement elicitation (tabella)
+Esplodo  qualche requisito (input,output,action, precondition, postcondition)
+Usa case (omino)
+Scenario (steps)
+Context diagram e tabelle interfacce
+
+
+2) Design
+Class diagrams
+Package diagram
+Sequence diagram

@@ -1,0 +1,30 @@
+Domotica -> casa inteligente
+
+1. 
+    problematiche: 
+    1. costruzione edificio
+    2. impiantistica elettrica e fluidomeccanica
+    3. impiantistica elettronica
+    4. sistema intelligente
+        .a sensori
+        .b trasduttori
+        .c linee di trasmissione
+        .d microprocessore/i
+        .e base dati
+        .f sistema di gestione software
+    5. certificazione ISO 
+        .a qualità: ISO 9001 
+        .b sicurezza 27001 sul lavoro (area cantiere)
+        .c sistemi IT, ISO 20000
+        .d ISO 9126, qualità del prodotto software
+        .e ISO 61508, sistemi safety-critical ( es. sistemi di autocontrollo in ambienti "pericolosi" ) 
+
+2. 
+    1. constraints list (team project_#_, what about, time consuming) 
+    2. Automatizzazione di apertura/chiusura finestre in f(temperatura_interna/esterna, condizioni climatiche, giorno/notte)
+
+3. Sviluppo sw di:
+    1. documents requirements;
+    2. design
+    3. implementation
+    4. system integration 

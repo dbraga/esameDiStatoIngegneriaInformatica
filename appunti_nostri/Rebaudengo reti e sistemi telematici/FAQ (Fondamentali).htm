@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0051)http://it.tldp.org/HOWTO/Linux+IPv6-HOWTO/x428.html -->
+<HTML><HEAD><TITLE>FAQ (Fondamentali)</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2800.1400" name=GENERATOR><LINK 
+title="Linux IPv6 HOWTO (it)&#10; " href="index.html" rel=HOME><LINK 
+title="Fondamenti&#10; " href="chapter-basics.html" rel=UP><LINK 
+title="Che aspetto hanno gli indirizzi IPv6?&#10;  " href="x403.html" 
+rel=PREVIOUS><LINK title="Tipi di indirizzi&#10; " 
+href="chapter-addresstypes.html" rel=NEXT></HEAD>
+<BODY class=SECT1 text=#000000 vLink=#840084 aLink=#0000ff link=#0000ff 
+bgColor=#ffffff>
+<DIV class=NAVHEADER>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" 
+summary="Header navigation table" border=0>
+  <TBODY>
+  <TR>
+    <TH align=middle colSpan=3>Linux IPv6 HOWTO (it)</TH></TR>
+  <TR>
+    <TD vAlign=bottom align=left width="10%"><A accessKey=P 
+      href="http://it.tldp.org/HOWTO/Linux+IPv6-HOWTO/x403.html">Indietro</A></TD>
+    <TD vAlign=bottom align=middle width="80%">Capitolo 2. Fondamenti</TD>
+    <TD vAlign=bottom align=right width="10%"><A accessKey=N 
+      href="http://it.tldp.org/HOWTO/Linux+IPv6-HOWTO/chapter-addresstypes.html">Avanti</A></TD></TR></TBODY></TABLE>
+<HR align=left width="100%">
+</DIV>
+<DIV class=SECT1>
+<H1 class=SECT1><A name=AEN428>2.4. FAQ (Fondamentali)</A></H1>
+<DIV class=SECT2>
+<H2 class=SECT2><A name=AEN430>2.4.1. Perchè il nome del successore di IPv4 è 
+IPv6 e non IPv5?</A></H2>
+<P>In ogni intestazione IP, i primi 4 bit sono riservati per la versione del 
+protocollo. Così teoricamente sono possibili numeri di protocollo da 0 a 15: 
+</P>
+<P></P>
+<UL>
+  <LI>
+  <P>4: già utilizzato per IPv4 </P>
+  <LI>
+  <P>5: riservato per lo Stream Protocol (STP, <A 
+  href="http://www.faqs.org/rfcs/rfc1819.html" target=_top>RFC 1819 / Internet 
+  Stream Protocol Version 2</A>) (il quale non è mai stato veramente reso 
+  pubblico) </P></LI></UL>
+<P>Il successivo numero libero è 6. Per cui è nato IPv6! </P></DIV>
+<DIV class=SECT2>
+<H2 class=SECT2><A name=AEN440>2.4.2. Indirizzi IPv6: perché un così grande 
+numero di bit?</A></H2>
+<P>Durante la progettazione di IPv4, si pensò che 32 bit fossero sufficienti per 
+il mondo. Guardando al passato, 32 bit sono stati sufficienti fino ad ora e può 
+darsi che basteranno per qualche altro anno. Comunque, 32 bit non bastano per 
+fornire in futuro, ad ogni dispositivo di rete un indirizzo globale. Si pensi ai 
+telefoni mobili, alle auto (inclusi i dispositivi sulle loro CAN-bus), ai 
+tostapane, ai frigoriferi, agli interruttori della luce, e cosi via ... </P>
+<P>Per questo i progettisti hanno scelto 128 bit, 4 volte più lungo e 2^96 volte 
+superiore rispetto all'IPv4 di oggi. </P>
+<P>La dimensione effettivamente utilizzabile è comunque inferiore rispetto a 
+quello che sembra. Questo perché nello schema degli indirizzi attualmente 
+definito, 64 bit sono usati per gli identificatori di interfaccia e gli altri 64 
+bit sono usati per l'instradamento. Assumendo gli attuali stretti livelli di 
+aggregazione (/48, /32, ...) è persino possibile esaurire lo spazio, ma speriamo 
+non nel prossimo futuro. </P>
+<P>Per maggiori informazioni si vedano anche <A 
+href="http://www.faqs.org/rfcs/rfc1715.html" target=_top>RFC 1715 / The H Ratio 
+for Address Assignment Efficiency</A> e <A 
+href="http://www.faqs.org/rfcs/rfc3194.html" target=_top>RFC 3194 / The 
+Host-Density Ratio for Address Assignment Efficiency</A>. </P></DIV>
+<DIV class=SECT2>
+<H2 class=SECT2><A name=AEN448>2.4.3. Indirizzi IPv6: Perché un così piccolo 
+numero di bit per un nuovo progetto?</A></H2>
+<P>Al momento ci sono (forse) alcune persone (conosco solo Jim Fleming...) su 
+Internet che stanno pensando a IPv8 e IPv16, il loro progetto è ancora lontano 
+dall'essere accettato e implementato. Nel frattempo 128 bit sono stati la 
+migliore scelta per l'overhead dell'intestazione e il trasporto dati. 
+Consideriamo la minima Maximum Transfer Unit (MTU) in IPv4 (576 ottetti) e in 
+IPv6 (1280 ottetti), la lunghezza dell'intestazione di IPv4 è 20 ottetti 
+(minima, può arrivare a 60 ottetti con le opzioni) quella di IPv6 è 48 ottetti 
+(fissa). Questa è il 3.4 % della MTU di IPv4 e il 3.8 % della MTU di IPv6. Ciò 
+significa che l'overhead dell'intestazione è quasi uguale. Più bit per gli 
+indirizzi richiedono intestazioni più grandi e quindi maggiore overhead. Si 
+consideri anche che la massima MTU su normali link (come Ethernet attualmente) è 
+di 1500 ottetti (in casi particolari 9k ottetti utilizzando frame "Jumbo"). In 
+definitiva, non sarebbe strutturalmente appropriato se il 10 % o 20 % dei dati 
+trasportati in un pacchetto di livello 3 fosse usato per gli indirizzi e non per 
+il payload. </P></DIV></DIV>
+<DIV class=NAVFOOTER>
+<HR align=left width="100%">
+
+<TABLE cellSpacing=0 cellPadding=0 width="100%" 
+summary="Footer navigation table" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=left width="33%"><A accessKey=P 
+      href="http://it.tldp.org/HOWTO/Linux+IPv6-HOWTO/x403.html">Indietro</A></TD>
+    <TD vAlign=top align=middle width="34%"><A accessKey=H 
+      href="http://it.tldp.org/HOWTO/Linux+IPv6-HOWTO/index.html">Partenza</A></TD>
+    <TD vAlign=top align=right width="33%"><A accessKey=N 
+      href="http://it.tldp.org/HOWTO/Linux+IPv6-HOWTO/chapter-addresstypes.html">Avanti</A></TD></TR>
+  <TR>
+    <TD vAlign=top align=left width="33%">Che aspetto hanno gli indirizzi 
+    IPv6?</TD>
+    <TD vAlign=top align=middle width="34%"><A accessKey=U 
+      href="http://it.tldp.org/HOWTO/Linux+IPv6-HOWTO/chapter-basics.html">Risali</A></TD>
+    <TD vAlign=top align=right width="33%">Tipi di 
+indirizzi</TD></TR></TBODY></TABLE></DIV></BODY></HTML>

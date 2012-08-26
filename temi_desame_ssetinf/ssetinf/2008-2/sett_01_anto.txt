@@ -1,0 +1,16 @@
+software che gestisca casa o ambiente ed il risparmio e impatto ambientale:
+    1. sw che gestisceintensità luminosa
+    2. temperatura interna/esterna
+
+azienda
+    1. rifiuti, tramite vetture normali
+    2. pagamento in funzione del numero di richieste di carica/scarica rifiuti
+
+sfida:
+    1. macchina elettrica con sw per la gestione del percorso migliore GPS
+    2. sistema integrato segnalazioni web
+    3. calcolo del pagamento a "quantità": bilancia integrata, codice cassonetti
+
+vantaggi: 
+    1. less CO, autoelettrica e migliore logistica
+    2. migliore logistica

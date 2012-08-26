@@ -1,0 +1,116 @@
+CACHE)
+la cache è una ram molto veloce, ma meno capiente.
+
+proc
+cache L1
+cache L2
+ram
+hard disk
+
+crescente top-down: capienza, tempo di accesso
+crescente bottom-up: costo, velocità
+
+ricordarsi schema von-neumann:
+
+mem (cache - ram)
+c.u.
+alu
+input
+output
+
+ricordarsi modello northbridge (collegato al processore e all'adattore grafico,alla mem, dispositivi veloci)-
+southbridge (i/o, dispositivi per interazione umana o con dispositivi più lenti) 
+
+
+2 tipi di write operations : 
+ - write through : ogni volta che modifico in cache, modifico in ram
+ - write back : modifico in ram (o hd) solo se avviene uno dei 3 eventi :
+	- write back invalidated
+	- cache miss
+	- flush
+
+cache misses: write allocate strategy
+- faccio update della cache (wb)
+- non faccio l'update della cache (w through)
+
+associatività della cache: corrispondenza cella ram - cella cache
+(direct mapped 1:1, n-associative n:1)
+
+protocollo MESI per coerenza dati (modified - exclusive - shared - invalid)
+write back tutti gli stati
+write through invalid - shared )
+
+
+MEMORY)
+sram -> 6 transistors/bit, più veloce, volatile ma persistente fino a quando c'è corrente, per le cache (tempi: ns)
+dram -> 1 transitor/bit + 1 condenstatore , deve  essere refreschata di continuo. organizzate come matrice,
+         righe e colonne ( ras, ras ) . 3 tipi di refresh ( ras, cas before ras, hidden refresh)
+
+page mode: ras fisso, cambio il cas. (EDO,static column, serial) 
+EDO mode: aumento frequenza cambio del cas 
+static-column mode: non varia il cas, tiro giù tutta la riga (dato pronto al termine)
+serial mode: mi tiro giù tutta la riga, cambiando di 1 bit l'indirizzamento del cas
+
+
+interleaving: memoria divisa in banchi logichi, ci accedo parallelamente
+
+s (synchronous)-dram : dram more powerfull
+
+BUS)
+trasferimento dati
+ISA (16 bit) uno dei primi, EISA (usato per gestire interazioni con disp più lenti), PCI (32 bit, + alta velocità)
+2-3 clocks per trasferimento (indirizzo, write, read)
+ultimi bus hanno anche un microprocessore
+burst mode : principio vicinanza dati, trasferisco più dati oltre a quelli richiesti. quindi dato un solo indirizzo,
+mi porto dietro più dati
+
+
+PROTECTED MODE)
+real mode, protected mode, virtual mode
+real mode -> access memory offset + segment_register × 16
+prot mode -> for multitasking (task = programma, i suoi dati, le sue system functions)
+
+prot mode:
+selectors to access memory
+ONION MODEL : requested privilege level (0,1,2,3) : each task has a rpl, and it can access 
+data belonging only to same or higher request mode
+
+descriptor tables: ldt, gdt
+
+global descriptor table:containing the   descriptors of segments available for all tasks
+Local Descriptor Table (LDT), containing the  descriptors of segments available to the currently
+  active task, only.
+
+descriptor: base address + limit address
+base limit = SI (selector index)x8 + base address (check if base is valid)
+effective address = base limit + offset (check is valid)
+then  access memory
+
+gates -> per jumps tra livelli ONION model
+interrupt descriptor table
+
+
+PAGE)
+il meccanismo di protect mode ci dà in output un indirizzo virtuale.
+pagine = 4kb
+
+page directory
+page table
+page frames
+physical address
+
+A cache  called Translation Lookaside Buffer (TLB)
+page protection (user/supervisor - r/rw) 
+
+schema finale slides page
+
+RISC -> reduced instruction set computer : dedicati (ARM e simili), più stage, tanti registri,meno memoria 
+CISC -> complex instruction set computer : general purpose (x86), pochi registri
+
+I/O)
+dedicated(or port) IO vs memory mapped io
+
+Memory-mapped I/O (not to be confused with memory-mapped file I/O) uses the same address bus to address both memory and I/O devices, and the CPU instructions used to access the memory are also used for accessing devices.
+Port-mapped I/O uses a special class of CPU instructions specifically for performing I/O
+
+
